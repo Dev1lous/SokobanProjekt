@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Projektusamogus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c9106238aa96b5cde7668fea3bd3a681a8e7320")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+146a395cd700374a9edba093d5e3c1dff263edf4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Projektusamogus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Projektusamogus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

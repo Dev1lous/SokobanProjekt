@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matouš\\source\\repos\\Projektusamogus\\Projektusamogus.csproj",
+      "projectUniqueName": "C:\\Users\\Matouš\\source\\repos\\FINALPROJE\\Projektusamogus.csproj",
       "projectName": "Projektusamogus",
-      "projectPath": "C:\\Users\\Matouš\\source\\repos\\Projektusamogus\\Projektusamogus.csproj",
+      "projectPath": "C:\\Users\\Matouš\\source\\repos\\FINALPROJE\\Projektusamogus.csproj",
       "packagesPath": "C:\\Users\\Matouš\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matouš\\source\\repos\\Projektusamogus\\obj\\",
+      "outputPath": "C:\\Users\\Matouš\\source\\repos\\FINALPROJE\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

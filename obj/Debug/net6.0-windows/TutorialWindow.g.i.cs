@@ -53,7 +53,7 @@ namespace Projektusamogus {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Projektusamogus;component/tutorialwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Projektusamogus;V1.0.0.0;component/tutorialwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\TutorialWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

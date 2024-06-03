@@ -1,6 +1,6 @@
-# Projektusamogus
+# Sokoban
 
-Tento projekt je jednoduchá puzzle hra implementovaná v jazyce C# pomocí WPF (Windows Presentation Foundation). Cílem hry je posunout bedny na urèená místa ovládáním postavy hráèe.
+Tento projekt je jednoduchá puzzle hra implementovaná v jazyce C# pomocí WPF. Cílem hry je posunout bedny na urèená místa ovládáním postavy hráèe.
 
 ## Obsah
 - [Funkce](#funkce)
