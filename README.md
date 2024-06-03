@@ -7,7 +7,7 @@ Tento projekt je jednoduchá puzzle hra implementovaná v jazyce C# pomocí WPF. Cí
 - [Instalace](#instalace)
 - [Jak hrát](#jak-hrát)
 - [Ovládání](#ovládání)
-- [Úrovnì](#úrovnì)
+- [Levely](#levely)
 
 ## Funkce
 - Více úrovní s postupnì se zvyšující obtížností.
@@ -21,12 +21,13 @@ Tento projekt je jednoduchá puzzle hra implementovaná v jazyce C# pomocí WPF. Cí
 
 ## Ovládání
 - **Šipky | WASD **: Pohyb postavou hráèe.
-- **R Klávesa**: Resetovat aktuální úroveò.
+- **R Klávesa**: Resetovat aktuální level.
+- **ESC | Q**: Odejít z aktuálního levelu
 
 
 
-## Úrovnì
-Hra momentálnì obsahuje tøi pøeddefinované úrovnì. Další úrovnì lze snadno pøidat rozšíøením metody `LoadLevel()` v souboru `MainWindow.xaml.cs`. Každá úroveò je reprezentována møížkou znakù, kde:
+## Levely
+Hra momentálnì obsahuje tøi pøeddefinované levely. Další levely lze snadno pøidat rozšíøením metody `LoadLevel()` v souboru `MainWindow.xaml.cs`. Každá úroveò je reprezentována møížkou znakù, kde:
 - `#`: Reprezentuje zeï, kterou nelze projít.
 - `P`: Reprezentuje postavu hráèe.
 - `B`: Reprezentuje bednu, která se mùže tlaèit.

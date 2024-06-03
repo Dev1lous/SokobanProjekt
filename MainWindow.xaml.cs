@@ -256,20 +256,21 @@ namespace Projektusamogus
                 Grid.SetColumn(gameMap[newRow, newColumn], newBoxColumn);
                 
                 gameMap[newBoxRow, newBoxColumn] = gameMap[newRow, newColumn]; //vezme kontent z toho boxu a da to na novy misto // bez tohohle by ten content se ztratil protože by zustal na miste a tam dam border a timpadem tam content není
-                gameMap[newRow, newColumn] = new Border // protože box už není na newrow a newcolumn tak tam dam border a transparent bg
+                gameMap[newRow, newColumn] = new Border
                 {
                     Background = Brushes.Transparent
                 };
             }
             Grid.SetRow(gameMap[playerRow, playerColumn], newRow);
             Grid.SetColumn(gameMap[playerRow, playerColumn], newColumn);
-            gameMap[newRow, newColumn] = gameMap[playerRow, playerColumn]; //nastavím že ta nová lokace je ted už normal lokace (prostě at není furt nová jak to mam asi vysvětlit jinak)
+            gameMap[newRow, newColumn] = gameMap[playerRow, playerColumn]; // to stejny lol
             gameMap[playerRow, playerColumn] = new Border
             {
                 Background = Brushes.Transparent
             };
             playerRow = newRow;
-            playerColumn = newColumn;       
+            playerColumn = newColumn;
+
             CheckDestinations();
         }
 
