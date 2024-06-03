@@ -1,0 +1,70 @@
+﻿<Window x:Class="Projektusamogus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projektusamogus"
+        mc:Ignorable="d"
+        Title="Map" Height="750" Width="750">
+
+    <Window.Resources>
+        <Style TargetType="Border" x:Key="WallStyle">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\wall.png"/>
+                    <!--https://guardian5.itch.io/painted-stone-wall-texture?download-->
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Border" x:Key="Box">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\Box.png"/>
+                    <!--https://opengameart.org/content/2d-wooden-box--> 
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Border" x:Key="Destination">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\Destination.png"/>
+                    <!--https://pngtree.com/freepng/check-red-cross-mark-grunge_7586752.html-->
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Border" x:Key="Player">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\pyramid.jpg"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid x:Name="Maingrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Window>
