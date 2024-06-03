@@ -1,35 +1,63 @@
-# Sokoban
+Dokumentace projektu „Projektusamogus“
+Pøehled
+Tento projekt je implementace jednoduché hry v jazyce C# s vyuitím WPF (Windows Presentation Foundation). Hráè ovládá postavièku v møíce a jeho cílem je umístit všechny boxy na vyznaèená místa.
 
-Tento projekt je jednoduchá puzzle hra implementovaná v jazyce C# pomocí WPF. Cílem hry je posunout bedny na urèená místa ovládáním postavy hráèe.
+Struktura tøídy MainWindow
+Tøída MainWindow dìdí z Window a pøedstavuje hlavní okno aplikace. Obsahuje následující atributy a metody:
 
-## Obsah
-- [Funkce](#funkce)
-- [Instalace](#instalace)
-- [Jak hrát](#jak-hrát)
-- [Ovládání](#ovládání)
-- [Levely](#levely)
+Atributy
+private Border[,] gameMap: Dvourozmìrné pole pro reprezentaci herní mapy.
+private string[] levelmap: Pole øetìzcù, které pøedstavují aktuální úroveò.
+private int playerRow: Øádek, na kterém se nachází hráè.
+private int playerColumn: Sloupec, na kterém se nachází hráè.
+private int level: Èíslo aktuální úrovnì.
+Konstruktor
+public MainWindow(int level): Inicializuje hlavní okno a naète danou úroveò.
+csharp
+Zkopírovat kód
+public MainWindow(int level)
+{
+    InitializeComponent();
+    this.level = level;
+    LoadLevel();
+}
+Metody
+private void LoadLevel()
+Naèítá úroveò na základì èísla úrovnì (level). Podle èísla úrovnì pøiøazuje hodnotu atributu levelmap a následnì volá metody InitializeGameMap() a DrawLevel(levelmap).
 
-## Funkce
-- Více úrovní s postupnì se zvyšující obtíností.
-- Jednoduchá a intuitivní hratelnost.
-- Základní detekce kolizí a kontrola podmínek vıhry.
+private void ResetLevel()
+Vymae aktuální herní plochu a znovu naète úroveò.
 
-## Jak hrát
-1. Spuste aplikaci.
-2. Pouijte šipky nebo WASD na klávesnici k pohybu postavou hráèe.
-3. Tlaèítkem 'R' resetujte aktuální úroveò.
+private void InitializeGameMap()
+Inicializuje herní mapu jako 10x10 møíku a pøidá ji do hlavního gridu (Maingrid).
 
-## Ovládání
-- **Šipky | WASD **: Pohyb postavou hráèe.
-- **R Klávesa**: Resetovat aktuální level.
-- **ESC | Q**: Odejít z aktuálního levelu
+private void DrawLevel(string[] level)
+Kreslí aktuální úroveò na základì hodnot v levelmap. Kadı znak v mapì reprezentuje jinı herní prvek:
 
+'P': Hráè
+'#': Zeï
+'$': Destinace
+'B': Box
+private void DrawPlayer()
+Kreslí hráèe na aktuální pozici (playerRow, playerColumn).
 
+private void DrawWalls(int row, int column)
+Kreslí zdi na zadanıch souøadnicích.
 
-## Levely
-Hra momentálnì obsahuje tøi pøeddefinované levely. Další levely lze snadno pøidat rozšíøením metody `LoadLevel()` v souboru `MainWindow.xaml.cs`. Kadá úroveò je reprezentována møíkou znakù, kde:
-- `#`: Reprezentuje zeï, kterou nelze projít.
-- `P`: Reprezentuje postavu hráèe.
-- `B`: Reprezentuje bednu, která se mùe tlaèit.
-- `$`: Reprezentuje cíl, kam je tøeba umístit bedny.
+private void DrawBox(int row, int column)
+Kreslí box na zadanıch souøadnicích.
 
+private void DrawDestination(int row, int column)
+Kreslí destinaci na zadanıch souøadnicích.
+
+private void CheckDestinations()
+Kontroluje, zda jsou všechny boxy na destinacích. Pokud ano, zobrazí zprávu o vıhøe a zavøe aktuální okno.
+
+private void MovePlayer(int newRow, int newColumn)
+Pohybuje hráèem na nové souøadnice, pokud je to moné. Pokud je na nové pozici box, pokusí se ho posunout. Kontroluje, zda hráè nevyjede mimo herní plochu a zda nenarazí do zdi nebo jiného boxu.
+
+private void QuitLevel()
+Zobrazí dialogové okno pro potvrzení ukonèení úrovnì. Pokud uivatel potvrdí, zavøe aktuální okno a otevøe okno menu.
+
+protected override void OnKeyDown(KeyEventArgs e)
+Reaguje na stisk kláves. Pohybuje hráèem podle stisknutıch kláves (Up, Down, Left, Right, W, A, S, D). Klávesou R resetuje úroveò a klávesami Escape nebo Q ukonèí úroveò.
