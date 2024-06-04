@@ -1,21 +1,19 @@
-### Projektusamogus
+# Sokoban
+
 Tento projekt je implementace jednoduché hry v jazyce C# s využitím WPF (Windows Presentation Foundation). Hráč ovládá postavičku v mřížce a jeho cílem je umístit všechny boxy na vyznačená místa.
 
-Přehled
+## Přehled
 Třída MainWindow dědí z Window a představuje hlavní okno aplikace. Obsahuje atributy a metody pro inicializaci a vykreslování herní plochy, pohyb hráče a kontrolu dokončení úrovně.
 
-Atributy
-private Border[,] gameMap: Dvourozměrné pole pro reprezentaci herní mapy.
-private string[] levelmap: Pole řetězců, které představují aktuální úroveň.
-private int playerRow: Řádek, na kterém se nachází hráč.
-private int playerColumn: Sloupec, na kterém se nachází hráč.
-private int level: Číslo aktuální úrovně.
-Konstruktor
-public MainWindow(int level)
-Inicializuje hlavní okno a načte danou úroveň.
+### Atributy
+- private Border[,] gameMap: Dvourozměrné pole pro reprezentaci herní mapy.
+- private string[] levelmap: 2D Pole, které představují aktuální úroveň.
+- private int playerRow: Řádek, na kterém se nachází hráč.
+- private int playerColumn: Sloupec, na kterém se nachází hráč.
+- private int level: Číslo aktuálního levelu.
+###Konstruktor
+- public MainWindow(int level): Inicializuje hlavní okno a načte danou úroveň.
 
-csharp
-Zkopírovat kód
 public MainWindow(int level)
 {
     InitializeComponent();
