@@ -1,43 +1,42 @@
-<<<<<<< HEAD
 # Sokoban
 
-Tento projekt je implementace jednoduché hry v jazyce C# s využitím WPF (Windows Presentation Foundation). Hráè ovládá postavièku v møížce a jeho cílem je umístit všechny boxy na vyznaèená místa.
+Tento projekt je implementace jednoduchÃ© hry v jazyce C# s vyuÅ¾itÃ­m WPF (Windows Presentation Foundation). HrÃ¡Ä ovlÃ¡dÃ¡ postaviÄku v mÅ™Ã­Å¾ce a jeho cÃ­lem je umÃ­stit vÅ¡echny boxy na vyznaÄenÃ¡ mÃ­sta.
 
-## Pøehled
-Tøída MainWindow dìdí z Window a pøedstavuje hlavní okno aplikace. Obsahuje atributy a metody pro inicializaci a vykreslování herní plochy, pohyb hráèe a kontrolu dokonèení úrovnì.
+## PÅ™ehled
+TÅ™Ã­da MainWindow dÄ›dÃ­ z Window a pÅ™edstavuje hlavnÃ­ okno aplikace. Obsahuje atributy a metody pro inicializaci a vykreslovÃ¡nÃ­ hernÃ­ plochy, pohyb hrÃ¡Äe a kontrolu dokonÄenÃ­ ÃºrovnÄ›.
 
 ## Atributy
 
 ```cs 
 private Border[,] gameMap
 ```
-### Dvourozmìrné pole pro reprezentaci herní mapy.
+### DvourozmÄ›rnÃ© pole pro reprezentaci hernÃ­ mapy.
 
 ```cs
  private string[] levelmap
 ```
-### 2D Pole, které pøedstavují aktuální úroveò.
+### 2D Pole, kterÃ© pÅ™edstavujÃ­ aktuÃ¡lnÃ­ ÃºroveÅˆ.
 
 ```cs
 private int playerRow
 ```
-### Øádek, na kterém se nachází hráè.
+### Å˜Ã¡dek, na kterÃ©m se nachÃ¡zÃ­ hrÃ¡Ä.
 
   ```cs
   private int playerColumn
   ```
-  ### Sloupec, na kterém se nachází hráè.
+  ### Sloupec, na kterÃ©m se nachÃ¡zÃ­ hrÃ¡Ä.
 
 ```cs
 private int level
 ```
-### Èíslo aktuálního levelu.
+### ÄŒÃ­slo aktuÃ¡lnÃ­ho levelu.
 
 ### Konstruktor
 ```cs
 public MainWindow(int level).
 ```
-### Inicializuje hlavní okno a naète danou úroveò
+### Inicializuje hlavnÃ­ okno a naÄte danou ÃºroveÅˆ
 ```cs
 public MainWindow(int level)
 {
@@ -48,15 +47,15 @@ public MainWindow(int level)
 ```
 ## Metody
 
-### Naèítá úroveò na základì èísla úrovnì (level). Podle èísla úrovnì pøiøazuje hodnotu atributu levelmap a následnì volá metody InitializeGameMap() a DrawLevel(levelmap).
+### NaÄÃ­tÃ¡ ÃºroveÅˆ na zÃ¡kladÄ› ÄÃ­sla ÃºrovnÄ› (level). Podle ÄÃ­sla ÃºrovnÄ› pÅ™iÅ™azuje hodnotu atributu levelmap a nÃ¡slednÄ› volÃ¡ metody InitializeGameMap() a DrawLevel(levelmap).
 ```cs
 private void LoadLevel()
 ```
-### Vymaže aktuální herní plochu a znovu naète úroveò.
+### VymaÅ¾e aktuÃ¡lnÃ­ hernÃ­ plochu a znovu naÄte ÃºroveÅˆ.
 ```cs
 private void ResetLevel()
 ```
-### Inicializuje herní mapu jako 10x10 møížku a pøidá ji do hlavního gridu (Maingrid).
+### Inicializuje hernÃ­ mapu jako 10x10 mÅ™Ã­Å¾ku a pÅ™idÃ¡ ji do hlavnÃ­ho gridu (Maingrid).
 ```cs
 private void InitializeGameMap()
 ```
@@ -64,31 +63,35 @@ private void InitializeGameMap()
 ```cs
 private void DrawLevel(string[] level)
 ```
-### Renderuje zdi na zadaných souøadnicích.
+### Renderuje zdi na zadanÃ½ch souÅ™adnicÃ­ch.
 ```cs
 private void DrawWalls(int row, int column)
 ```
-### Renderuje box na zadaných souøadnicích.
+### Renderuje box na zadanÃ½ch souÅ™adnicÃ­ch.
 ```cs
 private void DrawBox(int row, int column)
 ```
-### Renderuje destinaci na zadaných souøadnicích.
+### Renderuje destinaci na zadanÃ½ch souÅ™adnicÃ­ch.
 ```cs
 private void DrawDestination(int row, int column)
 ```
-### Pohybuje hráèem na nové souøadnice, pokud je to možné. Pokud je na nové pozici box, pokusí se ho posunout. Kontroluje, zda hráè nevyjede mimo herní plochu a zda nenarazí do zdi nebo jiného boxu.
+### Pohybuje hrÃ¡Äem na novÃ© souÅ™adnice, pokud je to moÅ¾nÃ©. Pokud je na novÃ© pozici box, pokusÃ­ se ho posunout. Kontroluje, zda hrÃ¡Ä nevyjede mimo hernÃ­ plochu a zda nenarazÃ­ do zdi nebo jinÃ©ho boxu.
 ```cs
 private void MovePlayer(int newRow, int newColumn)
 ```
-### Kontroluje, zda jsou všechny boxy na destinacích. Pokud ano, zobrazí zprávu o výhøe a zavøe aktuální okno.
+### Kontroluje, zda jsou vÅ¡echny boxy na destinacÃ­ch. Pokud ano, zobrazÃ­ zprÃ¡vu o vÃ½hÅ™e a zavÅ™e aktuÃ¡lnÃ­ okno.
 ```cs
 private void CheckDestinations()
 ```
-### Zobrazí dialogové okno pro potvrzení ukonèení úrovnì. Pokud uživatel potvrdí, zavøe aktuální okno a otevøe okno menu.
+### ZobrazÃ­ dialogovÃ© okno pro potvrzenÃ­ ukonÄenÃ­ ÃºrovnÄ›. Pokud uÅ¾ivatel potvrdÃ­, zavÅ™e aktuÃ¡lnÃ­ okno a otevÅ™e okno menu.
 ```cs
 private void QuitLevel()
 ```
-### Reaguje na stisk kláves. Pohybuje hráèem podle stisknutých kláves (Up, Down, Left, Right, W, A, S, D). Klávesou R resetuje úroveò a klávesami Escape nebo Q ukonèí úroveò.
+### Reaguje na stisk klÃ¡ves. Pohybuje hrÃ¡Äem podle stisknutÃ½ch klÃ¡ves (Up, Down, Left, Right, W, A, S, D). KlÃ¡vesou R resetuje ÃºroveÅˆ a klÃ¡vesami Escape nebo Q ukonÄÃ­ ÃºroveÅˆ.
 ```cs
 protected override void OnKeyDown(KeyEventArgs e)
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> refs/remotes/origin/master
