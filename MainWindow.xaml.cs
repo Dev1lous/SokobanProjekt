@@ -14,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+
+using System.Media;
+
 using System.Windows.Media.Media3D;
 using System.Data.Common;
 
@@ -201,6 +204,7 @@ namespace Projektusamogus
         }
         private void CheckDestinations()
         {
+            //SoundPlayer winsound = new SoundPlayer("./sounds/winsound.wav");
             Style boxStyle = FindResource("Box") as Style;
 
             for (int row = 0; row < 10; row++)
@@ -218,6 +222,7 @@ namespace Projektusamogus
                     }
                 }
             }
+            //winsound.Play();
             MessageBoxResult result = MessageBox.Show("Vyhrál jsi!");
             if (result == MessageBoxResult.OK)
             {
@@ -228,6 +233,7 @@ namespace Projektusamogus
         }
         private void MovePlayer(int newRow, int newColumn)
         {
+            SoundPlayer movesound = new SoundPlayer("./sounds/movesound.wav");
             Style walls = FindResource("WallStyle") as Style;
             Style box = FindResource("Box") as Style;
 
@@ -251,7 +257,7 @@ namespace Projektusamogus
                 Border newBoxCell = gameMap[newBoxRow, newBoxColumn];
                 if (newBoxCell.Style == walls || newBoxCell.Style == box)
                     return;
-
+              
                 Grid.SetRow(gameMap[newRow, newColumn], newBoxRow); 
                 Grid.SetColumn(gameMap[newRow, newColumn], newBoxColumn);
                 
@@ -270,7 +276,7 @@ namespace Projektusamogus
             };
             playerRow = newRow;
             playerColumn = newColumn;
-
+            movesound.Play();
             CheckDestinations();
         }
 

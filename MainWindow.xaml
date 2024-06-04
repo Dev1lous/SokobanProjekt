@@ -11,7 +11,7 @@
         <Style TargetType="Border" x:Key="WallStyle">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\wall.png"/>
+                    <ImageBrush ImageSource="/img/wall.png"/>
                     <!--https://guardian5.itch.io/painted-stone-wall-texture?download-->
                 </Setter.Value>
             </Setter>
@@ -19,7 +19,7 @@
         <Style TargetType="Border" x:Key="Box">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\Box.png"/>
+                    <ImageBrush ImageSource="/img/box.png"/>
                     <!--https://opengameart.org/content/2d-wooden-box--> 
                 </Setter.Value>
             </Setter>
@@ -27,7 +27,7 @@
         <Style TargetType="Border" x:Key="Destination">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\Destination.png"/>
+                    <ImageBrush ImageSource="/img/destination.png"/>
                     <!--https://pngtree.com/freepng/check-red-cross-mark-grunge_7586752.html-->
                 </Setter.Value>
             </Setter>
@@ -35,7 +35,7 @@
         <Style TargetType="Border" x:Key="Player">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="C:\Users\Matouš\source\repos\Projektusamogus\IMG\pyramid.jpg"/>
+                    <ImageBrush ImageSource="/img/pyramid.jpg"/>
                 </Setter.Value>
             </Setter>
         </Style>

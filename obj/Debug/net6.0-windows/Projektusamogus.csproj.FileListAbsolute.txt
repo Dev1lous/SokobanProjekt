@@ -50,3 +50,4 @@ C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\refint\Projekt
 C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\Projektusamogus.pdb
 C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\Projektusamogus.genruntimeconfig.cache
 C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\ref\Projektusamogus.dll
+C:\Users\Matouš\source\repos\FINALPROJE\bin\Debug\net6.0-windows\sounds\movesound.wav

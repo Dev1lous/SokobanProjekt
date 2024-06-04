@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|c:\\users\\matou\u0161\\source\\repos\\finalproje\\license||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|solutionrelative:license||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|c:\\users\\matou\u0161\\source\\repos\\finalproje\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
@@ -31,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|solutionrelative:startwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|c:\\users\\matou\u0161\\source\\repos\\finalproje\\license||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|solutionrelative:license||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|c:\\users\\matou\u0161\\source\\repos\\finalproje\\menuwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D498BA5B-319A-424A-95C8-023DD8DA2926}|Projektusamogus.csproj|solutionrelative:menuwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
@@ -46,24 +46,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAYwDwBAAAbAAAA",
+              "ViewState": "AQIAABUBAAAAAAAAAADwvyEBAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T10:33:40.924Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -76,32 +77,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAB0AAAAFAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAB4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2024-06-03T16:58:32.602Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "LICENSE",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\LICENSE",
               "RelativeDocumentMoniker": "LICENSE",
               "ToolTip": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\LICENSE",
               "RelativeToolTip": "LICENSE",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-03T16:57:48.818Z"
+              "WhenOpened": "2024-06-03T16:57:48.818Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "StartWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\StartWindow.xaml.cs",
               "RelativeDocumentMoniker": "StartWindow.xaml.cs",
@@ -113,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -125,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "StartWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\StartWindow.xaml",
               "RelativeDocumentMoniker": "StartWindow.xaml",
@@ -136,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MenuWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\MenuWindow.xaml.cs",
               "RelativeDocumentMoniker": "MenuWindow.xaml.cs",

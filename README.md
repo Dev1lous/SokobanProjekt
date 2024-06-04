@@ -5,14 +5,33 @@ Tento projekt je implementace jednoduché hry v jazyce C# s využitím WPF (Wind
 ## Přehled
 Třída MainWindow dědí z Window a představuje hlavní okno aplikace. Obsahuje atributy a metody pro inicializaci a vykreslování herní plochy, pohyb hráče a kontrolu dokončení úrovně.
 
-## Atributy
+## Licence
+Tento projekt je licencován pod MIT licencí. Podrobnosti naleznete v souboru LICENSE.
+
+## Atribuce Grafiky
+Tento projekt používá několik grafických prvků, které jsou zdarma k použití, s patřičnou atribucí. Následující grafické prvky jsou kredity příslušným zdrojům:
+
+#### Grafika Destinace:    
+    Zdroj: Check Red Cross Mark Grunge
+    Webová stránka: PNGTree
+
+#### Grafika Boxu:
+    Zdroj: 2D Wooden Box
+    Webová stránka: OpenGameArt
+
+#### Grafika Zdi:
+    Zdroj: Painted Stone Wall Texture
+    Webová stránka: Itch.io (autor Guardian5)
+
+
+## Atributy kódu
 
 ### Dvourozměrné pole pro reprezentaci herní mapy.
 ```cs 
 private Border[,] gameMap
 ```
 
-### 2D Pole, které představují aktuální úroveň.
+### Pole, které představuje aktuální level.
 ```cs
  private string[] levelmap
 ```
@@ -58,7 +77,7 @@ private void ResetLevel()
 ```cs
 private void InitializeGameMap()
 ```
-###  drawlevel
+###  Vytváří level podle symbolů které jsou v atributu levelmap | // P - HRÁČ ||| # - ZEĎ ||| B - BOX ||| $ - DESTINACE 
 ```cs
 private void DrawLevel(string[] level)
 ```
@@ -74,7 +93,8 @@ private void DrawBox(int row, int column)
 ```cs
 private void DrawDestination(int row, int column)
 ```
-### Pohybuje hráčem na nové souřadnice, pokud je to možné. Pokud je na nové pozici box, pokusí se ho posunout. Kontroluje, zda hráč nevyjede mimo herní plochu a zda nenarazí do zdi nebo jiného boxu.
+### Pohybuje hráčem na nové souřadnice, pokud je to možné. 
+### Pokud je na nové pozici box, pokusí se ho posunout. Kontroluje, zda hráč nevyjede mimo herní plochu a zda nenarazí do zdi nebo jiného boxu.
 ```cs
 private void MovePlayer(int newRow, int newColumn)
 ```

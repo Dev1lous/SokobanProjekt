@@ -7,4 +7,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="img\Box.png" />
+    <None Remove="img\Destination.png" />
+    <None Remove="img\pyramid.jpg" />
+    <None Remove="img\wall.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\box.png" />
+    <Resource Include="img\destination.png" />
+    <Resource Include="img\pyramid.jpg" />
+    <Resource Include="img\wall.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="sounds\movesound.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
