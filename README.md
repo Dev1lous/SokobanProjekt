@@ -7,30 +7,29 @@ Třída MainWindow dědí z Window a představuje hlavní okno aplikace. Obsahuj
 
 ## Atributy
 
+### Dvourozměrné pole pro reprezentaci herní mapy.
 ```cs 
 private Border[,] gameMap
 ```
-### Dvourozměrné pole pro reprezentaci herní mapy.
 
+### 2D Pole, které představují aktuální úroveň.
 ```cs
  private string[] levelmap
 ```
-### 2D Pole, které představují aktuální úroveň.
+### Řádek, na kterém se nachází hráč.
 
 ```cs
 private int playerRow
 ```
-### Řádek, na kterém se nachází hráč.
-
+ ### Sloupec, na kterém se nachází hráč.
   ```cs
   private int playerColumn
   ```
-  ### Sloupec, na kterém se nachází hráč.
+  ### Číslo aktuálního levelu.
 
 ```cs
 private int level
 ```
-### Číslo aktuálního levelu.
 
 ### Konstruktor
 ```cs
@@ -90,8 +89,4 @@ private void QuitLevel()
 ### Reaguje na stisk kláves. Pohybuje hráčem podle stisknutých kláves (Up, Down, Left, Right, W, A, S, D). Klávesou R resetuje úroveň a klávesami Escape nebo Q ukončí úroveň.
 ```cs
 protected override void OnKeyDown(KeyEventArgs e)
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> refs/remotes/origin/master
