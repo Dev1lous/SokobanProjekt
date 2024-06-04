@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAACUBAAAAAAAAAADwvzwBAAAbAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAYwDwBAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T10:33:40.924Z",
               "IsPinned": true,
@@ -72,8 +72,7 @@
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-03T14:10:45.703Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -83,7 +82,7 @@
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADgAAAADAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2024-06-03T16:58:32.602Z",
               "EditorCaption": ""
@@ -121,8 +120,7 @@
               "ToolTip": "C:\\Users\\Matou\u0161\\source\\repos\\FINALPROJE\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-20T08:49:18.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T08:49:18.56Z"
             },
             {
               "$type": "Document",
