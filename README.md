@@ -1,54 +1,18 @@
 # Sokoban
 
-Tento projekt je implementace jednoduché hry v jazyce C# s využitím WPF (Windows Presentation Foundation). Hráč ovládá postavičku v mřížce a jeho cílem je umístit všechny boxy na vyznačená místa.
-
 ## Přehled
-Třída MainWindow dědí z Window a představuje hlavní okno aplikace. Obsahuje atributy a metody pro inicializaci a vykreslování herní plochy, pohyb hráče a kontrolu dokončení úrovně.
 
-## Atribuce Grafiky
-Tento projekt používá několik grafických prvků, které jsou zdarma k použití, s patřičnou atribucí. Následující grafické prvky jsou kredity příslušným zdrojům:
+Namespace `Projektusamogus` obsahuje hru implementovanou v jazyce C#. Hra je strukturována ve třídě `MainWindow`. Hra spočívá v logickém řešení hádanek posouváním boxů na určené destinace.
 
-#### Grafika Destinace:    
-#### Grafika Boxu:
-    Zdroj: 2D Wooden Box
-    Webová stránka: OpenGameArt
+## Třídy a Metody
 
-#### Grafika Zdi:
-    Zdroj: Painted Stone Wall Texture
-    Webová stránka: Itch.io (autor Guardian5)
+### Třída `MainWindow`
 
+Hlavní třída aplikace, `MainWindow`, spravuje stav hry, inicializuje herní mřížku, zpracovává uživatelský vstup a definuje logiku pro načítání a resetování úrovní. Klíčové metody zahrnují:
 
-## Atributy kódu
+- **Konstruktor: `MainWindow(int level)`**
+  - Inicializuje herní okno a načte specifikovanou úroveň.
 
-#### Dvourozměrné pole pro reprezentaci herní mapy.
-```cs 
-private Border[,] gameMap
-```
-
-#### Pole, které představuje aktuální level.
-```cs
- private string[] levelmap
-```
-#### Řádek, na kterém se nachází hráč.
-
-```cs
-private int playerRow
-```
- ### Sloupec, na kterém se nachází hráč.
-  ```cs
-  private int playerColumn
-  ```
-  ### Číslo aktuálního levelu.
-
-```cs
-private int level
-```
-
-### Konstruktor
-```cs
-public MainWindow(int level).
-```
-### Inicializuje hlavní okno a načte danou úroveň
 ```cs
 public MainWindow(int level)
 {
@@ -57,50 +21,263 @@ public MainWindow(int level)
     LoadLevel();
 }
 ```
-## Metody
 
-### Načítá úroveň na základě čísla úrovně (level). Podle čísla úrovně přiřazuje hodnotu atributu levelmap a následně volá metody InitializeGameMap() a DrawLevel(levelmap).
+- **Metoda LoadLevel()**
+    - Načítá úroveň na základě hodnoty level a volá metody pro inicializaci herní mřížky a vykreslení úrovně.
+
 ```cs
 private void LoadLevel()
+{
+    switch (this.level)
+    {
+        case 1:
+            levelmap = new string[]
+            {
+                "##########",
+                "##########",
+                "###$######",
+                "###....$.#",
+                "##..###B.#",
+                "##P$.....#",
+                "#####....#",
+                "#####.BB.#",
+                "#####..###",
+                "##########"
+            };
+            InitializeGameMap();
+            DrawLevel(levelmap);
+            break;
+
+        case 2:
+            levelmap = new string[]
+            {
+                "##########",
+                "####..####",
+                "#...P..B.#",
+                "#.B....#.#",
+                "####$B.#.#",
+                "#####.$..#",
+                "####$.$B.#",
+                "##########",
+                "##########",
+                "##########"
+            };
+            InitializeGameMap();
+            DrawLevel(levelmap);
+            break;
+
+        case 3:
+            levelmap = new string[]
+            {
+                "##########",
+                "##########",
+                "###$...$##",
+                "###$P..###",
+                "###$.B.###",
+                "#####...##",
+                "#.B...B..#",
+                "#....B...#",
+                "#####..###",
+                "##########"
+            };
+            InitializeGameMap();
+            DrawLevel(levelmap);
+            break;
+        default:
+            break;
+    }
+}
+
 ```
-### Vymaže aktuální herní plochu a znovu načte úroveň.
+
+- **Metoda ResetLevel()**
+    - Resetuje aktuální úroveň a načte ji znovu.
 ```cs
 private void ResetLevel()
+{
+    Maingrid.Children.Clear();
+    InitializeGameMap();
+    LoadLevel();
+}
 ```
-### Inicializuje herní mapu jako 10x10 mřížku a přidá ji do hlavního gridu (Maingrid).
+
+- **Metoda InitializeGameMap()**
+    - Inicializuje herní mřížku s prázdnými buňkami.
 ```cs
 private void InitializeGameMap()
+{
+    gameMap = new Border[10, 10];
+    for (int row = 0; row < 10; row++)
+    {
+        for (int column = 0; column < 10; column++)
+        {
+            Border border = new Border
+            {
+                Background = Brushes.Transparent
+            };
+            Grid.SetRow(border, row);
+            Grid.SetColumn(border, column);
+            Maingrid.Children.Add(border);
+            gameMap[row, column] = border;
+        }
+    }
+}
 ```
-###  Vytváří level podle symbolů které jsou v atributu levelmap | // P - HRÁČ ||| # - ZEĎ ||| B - BOX ||| $ - DESTINACE 
+- **Metoda DrawLevel(string[] level)**
+    - Vykresluje úroveň na základě pole řetězců level, kde každý znak představuje různé herní objekty.
+    - Použité symboly:
+        - P: Hráč
+        - #: Zeď
+        - B: Box
+        - $: Destinace
 ```cs
 private void DrawLevel(string[] level)
+{
+    for (int row = 0; row < level.Length; row++)
+    {
+        for (int column = 0; column < level.Length; column++)
+        {
+            char symbol = level[row][column];
+            switch (symbol)
+            {
+                case 'P':
+                    playerRow = row;
+                    playerColumn = column;
+                    DrawPlayer();
+                    break;
+                case '#':
+                    DrawWalls(row, column);
+                    break;
+                case '$':
+                    DrawDestination(row, column);
+                    break;
+                case 'B':
+                    DrawBox(row, column);
+                    break;
+            }
+        }
+    }
+}
 ```
-### Renderuje zdi na zadaných souřadnicích.
+- **Metoda DrawPlayer()**
+    - Vykresluje hráče na aktuální pozici playerRow a playerColumn.
 ```cs
-private void DrawWalls(int row, int column)
+private void DrawPlayer()
+{
+    Style style = FindResource("Player") as Style;
+    Border player = new Border
+    {
+        Style = style,
+    };
+    Panel.SetZIndex(player, 2);
+    Grid.SetRow(player, playerRow);
+    Grid.SetColumn(player, playerColumn);
+    Maingrid.Children.Add(player);
+    gameMap[playerRow, playerColumn] = player;
+}
 ```
-### Renderuje box na zadaných souřadnicích.
+- **Metoda DrawBox(int row, int column)**
+    -Vykresluje box na specifikovaném řádku a sloupci.
 ```cs
 private void DrawBox(int row, int column)
+{
+    Style style = FindResource("Box") as Style;
+    Border box = new Border
+    {
+        Style = style,
+    };
+    Panel.SetZIndex(box, 1);
+    Grid.SetRow(box, row);
+    Grid.SetColumn(box, column);
+    Maingrid.Children.Add(box);
+    gameMap[row, column] = box;
+}
 ```
-### Renderuje destinaci na zadaných souřadnicích.
+- **Metoda DrawDestination(int row, int column)**
+    -Vykresluje destinaci na specifikovaném řádku a sloupci.
 ```cs
 private void DrawDestination(int row, int column)
+{
+    Style style = FindResource("Destination") as Style;
+    Border destination = new Border
+    {
+        Style = style,
+    };
+    Grid.SetRow(destination, row);
+    Grid.SetColumn(destination, column);
+    Maingrid.Children.Add(destination);
+    gameMap[row, column] = destination;
+}
 ```
-### Pohybuje hráčem na nové souřadnice, pokud je to možné. 
-### Pokud je na nové pozici box, pokusí se ho posunout. Kontroluje, zda hráč nevyjede mimo herní plochu a zda nenarazí do zdi nebo jiného boxu.
-```cs
-private void MovePlayer(int newRow, int newColumn)
-```
-### Kontroluje, zda jsou všechny boxy na destinacích. Pokud ano, zobrazí zprávu o výhře a zavře aktuální okno.
+- **Metoda CheckDestinations()**
+    - Kontroluje, zda jsou všechny boxy na destinacích, přehraje zvuk vítězství a zobrazí zprávu, pokud hráč vyhrál.
 ```cs
 private void CheckDestinations()
+{
+    Style boxStyle = FindResource("Box") as Style;
+
+    for (int row = 0; row < 10; row++)
+    {
+        for (int column = 0; column < 10; column++)
+        {
+            Border cell = gameMap[row, column];
+            if (cell.Style == boxStyle)
+            {
+                if (levelmap[row][column] != '$')
+                {
+                    return;
+                }
+            }
+        }
+    }
+    MessageBoxResult result = MessageBox.Show("Vyhrál jsi!");
+    if (result == MessageBoxResult.OK)
+    {
+        StartWindow startWindow = new StartWindow();
+        startWindow.Show();
+        this.Close();
+    }
+}
 ```
-### Zobrazí dialogové okno pro potvrzení ukončení úrovně. Pokud uživatel potvrdí, zavře aktuální okno a otevře okno menu.
+- **Metoda MovePlayer(int newRow, int newColumn)**
+    - Přesouvá hráče na nové pozice newRow a newColumn, pokud je to možné. Pokud je na nové pozici box, posune box na další volné místo.
 ```cs
-private void QuitLevel()
-```
-### Reaguje na stisk kláves. Pohybuje hráčem podle stisknutých kláves (Up, Down, Left, Right, W, A, S, D). Klávesou R resetuje úroveň a klávesami Escape nebo Q ukončí úroveň.
-```cs
-protected override void OnKeyDown(KeyEventArgs e)
+private void MovePlayer(int newRow, int newColumn)
+{
+    SoundPlayer movesound = new SoundPlayer("./sounds/movesound.wav");
+    Style walls = FindResource("WallStyle") as Style;
+    Style box = FindResource("Box") as Style;
+
+    if (newRow < 0 || newRow >= 10 || newColumn < 0 || newColumn >= 10)
+        return;
+
+    Border newCell = gameMap[newRow, newColumn];
+
+    if (newCell.Style == walls)
+    {
+        return;
+    }
+    else if (newCell.Style == box)
+    {
+        int newBoxRow = newRow + (newRow - playerRow);
+        int newBoxColumn = newColumn + (newColumn - playerColumn);
+
+        if (newBoxRow < 0 || newBoxRow >= 10 || newBoxColumn < 0 || newBoxColumn >= 10)
+            return;
+
+        Border newBoxCell = gameMap[newBoxRow, newBoxColumn];
+        if (newBoxCell.Style == walls || newBoxCell.Style == box)
+            return;
+
+        Grid.SetRow(gameMap[newRow, newColumn], newBoxRow);
+        Grid.SetColumn(gameMap[newRow, newColumn], newBoxColumn);
+
+        gameMap[newBoxRow, newBoxColumn] = gameMap[newRow, newColumn];
+        gameMap[newRow, newColumn] = new Border
+        {
+            Background = Brushes.Transparent
+        };
+    }
+}
+   
 ```
