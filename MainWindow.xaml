@@ -20,7 +20,7 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush ImageSource="/img/box.png"/>
-                    <!--https://opengameart.org/content/2d-wooden-box--> 
+                    <!--https://opengameart.org/content/2d-wooden-box-->
                 </Setter.Value>
             </Setter>
         </Style>
@@ -40,7 +40,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    
+
     <Grid x:Name="Maingrid">
         <Grid.RowDefinitions>
             <RowDefinition/>

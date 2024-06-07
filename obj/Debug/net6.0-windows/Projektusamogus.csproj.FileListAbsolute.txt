@@ -25,6 +25,7 @@ C:\Users\Matouš\source\repos\Projektusamogus\obj\Debug\net6.0-windows\MenuWindo
 C:\Users\Matouš\source\repos\Projektusamogus\obj\Debug\net6.0-windows\StartWindow.baml
 C:\Users\Matouš\source\repos\Projektusamogus\obj\Debug\net6.0-windows\TutorialWindow.g.cs
 C:\Users\Matouš\source\repos\Projektusamogus\obj\Debug\net6.0-windows\TutorialWindow.baml
+C:\Users\Matouš\source\repos\FINALPROJE\bin\Debug\net6.0-windows\sounds\movesound.wav
 C:\Users\Matouš\source\repos\FINALPROJE\bin\Debug\net6.0-windows\Projektusamogus.exe
 C:\Users\Matouš\source\repos\FINALPROJE\bin\Debug\net6.0-windows\Projektusamogus.deps.json
 C:\Users\Matouš\source\repos\FINALPROJE\bin\Debug\net6.0-windows\Projektusamogus.runtimeconfig.json
@@ -50,4 +51,3 @@ C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\refint\Projekt
 C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\Projektusamogus.pdb
 C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\Projektusamogus.genruntimeconfig.cache
 C:\Users\Matouš\source\repos\FINALPROJE\obj\Debug\net6.0-windows\ref\Projektusamogus.dll
-C:\Users\Matouš\source\repos\FINALPROJE\bin\Debug\net6.0-windows\sounds\movesound.wav

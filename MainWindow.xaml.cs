@@ -14,9 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-
 using System.Media;
-
 using System.Windows.Media.Media3D;
 using System.Data.Common;
 
@@ -34,8 +32,11 @@ namespace Projektusamogus
         private int level;
         public MainWindow(int level)
         {
+            //SoundPlayer gamesound = new SoundPlayer("./sounds/gamesound.wav");
+
             InitializeComponent();
             this.level = level;
+            //gamesound.Play();
             LoadLevel();
         }
         private void LoadLevel()
@@ -77,7 +78,7 @@ namespace Projektusamogus
                     InitializeGameMap();
                     DrawLevel(levelmap);
                     break;
-                    
+
                 case 3:
                     levelmap = new string[]
                     {
@@ -94,7 +95,7 @@ namespace Projektusamogus
                     };
                     InitializeGameMap();
                     DrawLevel(levelmap);
-                    break;        
+                    break;
                 default:
                     break;
             }
@@ -156,7 +157,7 @@ namespace Projektusamogus
             Style style = FindResource("Player") as Style;
             Border player = new Border
             {
-                Style = style,               
+                Style = style,
             };
             Panel.SetZIndex(player, 2);
             Grid.SetRow(player, playerRow);
@@ -170,7 +171,7 @@ namespace Projektusamogus
             Border wall = new Border
             {
                 Style = style,
-            };         
+            };
             Grid.SetRow(wall, row);
             Grid.SetColumn(wall, column);
             Maingrid.Children.Add(wall);
@@ -178,10 +179,9 @@ namespace Projektusamogus
         }
         private void DrawBox(int row, int column)
         {
-            
             Style style = FindResource("Box") as Style;
             Border box = new Border
-            {               
+            {
                 Style = style,
             };
             Panel.SetZIndex(box, 1);
@@ -211,12 +211,12 @@ namespace Projektusamogus
             {
                 for (int column = 0; column < 10; column++)
                 {
-                    Border cell = gameMap[row, column];         
+                    Border cell = gameMap[row, column];
                     // pokud je na ty lokaci box tak se koukne jestli tam je symbol $ tak je box v destinaci a hledá dal
                     if (cell.Style == boxStyle)
                     {
                         if (levelmap[row][column] != '$')
-                        {                            
+                        {
                             return;
                         }
                     }
@@ -243,7 +243,7 @@ namespace Projektusamogus
             Border newCell = gameMap[newRow, newColumn];
 
             if (newCell.Style == walls)
-            {              
+            {
                 return;
             }
             else if (newCell.Style == box)
@@ -257,10 +257,10 @@ namespace Projektusamogus
                 Border newBoxCell = gameMap[newBoxRow, newBoxColumn];
                 if (newBoxCell.Style == walls || newBoxCell.Style == box)
                     return;
-              
-                Grid.SetRow(gameMap[newRow, newColumn], newBoxRow); 
+
+                Grid.SetRow(gameMap[newRow, newColumn], newBoxRow);
                 Grid.SetColumn(gameMap[newRow, newColumn], newBoxColumn);
-                
+
                 gameMap[newBoxRow, newBoxColumn] = gameMap[newRow, newColumn]; //vezme kontent z toho boxu a da to na novy misto // bez tohohle by ten content se ztratil protože by zustal na miste a tam dam border a timpadem tam content není
                 gameMap[newRow, newColumn] = new Border
                 {
@@ -279,7 +279,6 @@ namespace Projektusamogus
             movesound.Play();
             CheckDestinations();
         }
-
         private void QuitLevel()
         {
             MessageBoxResult result = MessageBox.Show("Chceš opustit level?", "Potvrzení že jsi špatnej a neumíš to", MessageBoxButton.YesNo);
@@ -290,7 +289,6 @@ namespace Projektusamogus
                 this.Close();
             }
         }
-
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
@@ -299,7 +297,7 @@ namespace Projektusamogus
                 case Key.Up:
                     MovePlayer(playerRow - 1, playerColumn);
                     break;
-                case Key.Down:                  
+                case Key.Down:
                     MovePlayer(playerRow + 1, playerColumn);
                     break;
                 case Key.Left:

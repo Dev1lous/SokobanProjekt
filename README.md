@@ -5,16 +5,10 @@ Tento projekt je implementace jednoduché hry v jazyce C# s využitím WPF (Wind
 ## Přehled
 Třída MainWindow dědí z Window a představuje hlavní okno aplikace. Obsahuje atributy a metody pro inicializaci a vykreslování herní plochy, pohyb hráče a kontrolu dokončení úrovně.
 
-## Licence
-Tento projekt je licencován pod MIT licencí. Podrobnosti naleznete v souboru LICENSE.
-
 ## Atribuce Grafiky
 Tento projekt používá několik grafických prvků, které jsou zdarma k použití, s patřičnou atribucí. Následující grafické prvky jsou kredity příslušným zdrojům:
 
 #### Grafika Destinace:    
-    Zdroj: Check Red Cross Mark Grunge
-    Webová stránka: PNGTree
-
 #### Grafika Boxu:
     Zdroj: 2D Wooden Box
     Webová stránka: OpenGameArt
@@ -26,16 +20,16 @@ Tento projekt používá několik grafických prvků, které jsou zdarma k použ
 
 ## Atributy kódu
 
-### Dvourozměrné pole pro reprezentaci herní mapy.
+#### Dvourozměrné pole pro reprezentaci herní mapy.
 ```cs 
 private Border[,] gameMap
 ```
 
-### Pole, které představuje aktuální level.
+#### Pole, které představuje aktuální level.
 ```cs
  private string[] levelmap
 ```
-### Řádek, na kterém se nachází hráč.
+#### Řádek, na kterém se nachází hráč.
 
 ```cs
 private int playerRow
