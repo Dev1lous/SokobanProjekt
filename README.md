@@ -176,7 +176,7 @@ private void DrawLevel(string[] level)
 }
 ```
 - **Metoda DrawWalls()**
-    - Vykresluje zdi na symbolu `#` v atributu levelmap
+    - Vykresluje zdi v `gameMap` podle symbolu `#` v atributu `levelmap`
     - Styl `WallStyle` je definován v XAML souboru.
 ```cs
 private void DrawWalls(int row, int column)
@@ -193,7 +193,7 @@ private void DrawWalls(int row, int column)
 }
 ```
 - **Metoda DrawPlayer()**
-    - Vykresluje hráče na symbolu `P` v atributu `levelmap`
+    - Vykresluje hráče v `gameMap` podle symbolu `P` v atributu `levelmap`
     - Styl `Player` je definován v XAML souboru a obsahuje informace o vzhledu hráče.
 ```cs
 private void DrawPlayer()
@@ -211,7 +211,7 @@ private void DrawPlayer()
 }
 ```
 - **Metoda DrawBox(int row, int column)**
-    -Vykresluje box na symbolu `B` v atributu `levelmap`
+    - Vykresluje box v `gameMap` podle symbolu `B` v atributu `levelmap`
     - Styl `box` je definován v XAML souboru a obsahuje informace o vzhledu hráče.
 ```cs
 private void DrawBox(int row, int column)
@@ -229,7 +229,7 @@ private void DrawBox(int row, int column)
 }
 ```
 - **Metoda DrawDestination(int row, int column)**
-    - Vykresluje destinaci v gridu tam kde se nachází symbol destinace v `levelmap`
+    - Vykresluje destinaci v `gameMap` podle symbolu `$` v atributu `levelmap`
     - Styl `Destination` je definován v XAML souboru kde.
 ```cs
 private void DrawDestination(int row, int column)
