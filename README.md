@@ -2,7 +2,7 @@
 
 ## Přehled
 
-Namespace `Projektusamogus` obsahuje hru implementovanou v jazyce C#. Hra je strukturována ve třídě `MainWindow`. Hra spočívá v logickém řešení hádanek posouváním boxů na určené destinace.
+Hra je strukturována ve třídě `MainWindow`. Hra spočívá v logickém řešení hádanek posouváním boxů na určené destinace.
 
 ## Třídy a Metody
 
@@ -10,6 +10,22 @@ Namespace `Projektusamogus` obsahuje hru implementovanou v jazyce C#. Hra je str
 
 Hlavní třída aplikace, `MainWindow`, spravuje stav hry, inicializuje herní mřížku, zpracovává uživatelský vstup a definuje logiku pro načítání a resetování úrovní. Klíčové metody zahrnují:
 
+Atributy třídy MainWindow
+  - `private Border[,] gameMap`
+      - Dvourozměrné pole reprezentující herní mřížku, kde každý prvek je instance třídy Border.
+
+  - `private string[] levelmap`
+    - Pole řetězců, které reprezentuje mapu levelu.
+
+  - `private int playerRow`
+    - Pozice hráče na řádku v herní mřížce.
+
+  - `private int playerColumn`
+    - Pozice hráče ve sloupci v herní mřížce.
+
+  - `private int level`
+    - Aktuální úroveň hry.
+## Metody a konstruktor
 - **Konstruktor: `MainWindow(int level)`**
   - Inicializuje herní okno a načte specifikovanou úroveň.
 
@@ -91,7 +107,7 @@ private void LoadLevel()
 ```
 
 - **Metoda ResetLevel()**
-    - Resetuje aktuální úroveň a načte ji znovu.
+    - Resetuje aktuální level a načte ho znovu
 ```cs
 private void ResetLevel()
 {
@@ -124,7 +140,7 @@ private void InitializeGameMap()
 }
 ```
 - **Metoda DrawLevel(string[] level)**
-    - Vykresluje úroveň na základě pole řetězců level, kde každý znak představuje různé herní objekty.
+    - Vykresluje level na základě pole řetězců level, kde každý znak představuje různé herní objekty.
     - Použité symboly:
         - P: Hráč
         - #: Zeď
@@ -159,8 +175,26 @@ private void DrawLevel(string[] level)
     }
 }
 ```
+- **Metoda DrawWalls()**
+    - Vykresluje zdi na symbolu `#` v atributu levelmap
+    - Styl `WallStyle` je definován v XAML souboru.
+```cs
+private void DrawWalls(int row, int column)
+{
+    Style style = FindResource("WallStyle") as Style;
+    Border wall = new Border
+    {
+        Style = style,
+    };
+    Grid.SetRow(wall, row);
+    Grid.SetColumn(wall, column);
+    Maingrid.Children.Add(wall);
+    gameMap[row, column] = wall;
+}
+```
 - **Metoda DrawPlayer()**
-    - Vykresluje hráče na aktuální pozici playerRow a playerColumn.
+    - Vykresluje hráče na symbolu `P` v atributu `levelmap`
+    - Styl `Player` je definován v XAML souboru a obsahuje informace o vzhledu hráče.
 ```cs
 private void DrawPlayer()
 {
@@ -177,7 +211,8 @@ private void DrawPlayer()
 }
 ```
 - **Metoda DrawBox(int row, int column)**
-    -Vykresluje box na specifikovaném řádku a sloupci.
+    -Vykresluje box na symbolu `B` v atributu `levelmap`
+    - Styl `box` je definován v XAML souboru a obsahuje informace o vzhledu hráče.
 ```cs
 private void DrawBox(int row, int column)
 {
@@ -194,7 +229,8 @@ private void DrawBox(int row, int column)
 }
 ```
 - **Metoda DrawDestination(int row, int column)**
-    -Vykresluje destinaci na specifikovaném řádku a sloupci.
+    - Vykresluje destinaci v gridu tam kde se nachází symbol destinace v `levelmap`
+    - Styl `Destination` je definován v XAML souboru kde.
 ```cs
 private void DrawDestination(int row, int column)
 {
@@ -244,7 +280,6 @@ private void CheckDestinations()
 ```cs
 private void MovePlayer(int newRow, int newColumn)
 {
-    SoundPlayer movesound = new SoundPlayer("./sounds/movesound.wav");
     Style walls = FindResource("WallStyle") as Style;
     Style box = FindResource("Box") as Style;
 
