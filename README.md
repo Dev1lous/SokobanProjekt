@@ -17,12 +17,14 @@ Následující grafické prvky byly použity v projektu:
   - Zdroj: [2D Wooden Box](https://opengameart.org/content/2d-wooden-box)
   - Autor: Gaurav Kumar (gdaksh)
 
-### Grafika destinace:
+## Atribuce zvuku
+Následující muzika byla použita v projektu:
 
-  - Zdroj: [Check red cross mark grunge](https://pngtree.com/freepng/check-red-cross-mark-grunge_7586752.html)
-  - Autor: PNGTree
+### Muzika při hraní
 
-
+  - Zdroj: [Pixabay](https://pixabay.com/sound-effects/026491-pixel-song-8-72675/)
+  - Autor: Pixabay
+  
 ## Třídy a Metody
 
 ### Třída `StartWindow`

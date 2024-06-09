@@ -25,6 +25,10 @@ namespace Projektusamogus
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MediaPlayer gamesong = new MediaPlayer();
+        private MediaPlayer winsound = new MediaPlayer();
+        private MediaPlayer movesound = new MediaPlayer();
+
         private Border[,] gameMap;
         private string[] levelmap;
         private int playerRow;
@@ -32,12 +36,18 @@ namespace Projektusamogus
         private int level;
         public MainWindow(int level)
         {
-            //SoundPlayer gamesound = new SoundPlayer("./sounds/gamesound.wav");
+            gamesong.Open(new Uri("./sounds/gamesong.wav", UriKind.Relative));
+
+            gamesong.MediaEnded += (sender, e) => {
+                gamesong.Position = TimeSpan.Zero;
+                gamesong.Play();
+            };
 
             InitializeComponent();
-            this.level = level;
-            //gamesound.Play();
+            this.level = level;    
             LoadLevel();
+            gamesong.Play();
+            
         }
         private void LoadLevel()
         {
@@ -204,7 +214,8 @@ namespace Projektusamogus
         }
         private void CheckDestinations()
         {
-            //SoundPlayer winsound = new SoundPlayer("./sounds/winsound.wav");
+            winsound.Open(new Uri("./sounds/winsound.wav", UriKind.Relative));
+
             Style boxStyle = FindResource("Box") as Style;
 
             for (int row = 0; row < 10; row++)
@@ -222,8 +233,8 @@ namespace Projektusamogus
                     }
                 }
             }
-            //winsound.Play();
-            MessageBoxResult result = MessageBox.Show("Vyhrál jsi!");
+            winsound.Play();
+            MessageBoxResult result = MessageBox.Show("Vyhrál jsi!", "Gratuluji ti", MessageBoxButton.OK);
             if (result == MessageBoxResult.OK)
             {
                 StartWindow startWindow = new StartWindow();
@@ -233,17 +244,19 @@ namespace Projektusamogus
         }
         private void MovePlayer(int newRow, int newColumn)
         {
-            SoundPlayer movesound = new SoundPlayer("./sounds/movesound.wav");
+            movesound.Open(new Uri("./sounds/movesound.wav", UriKind.Relative));
+
             Style walls = FindResource("WallStyle") as Style;
             Style box = FindResource("Box") as Style;
 
-            if (newRow < 0 || newRow >= 10 || newColumn < 0 || newColumn >= 10)
+            if (newRow < 0 || newRow >= 10 || newColumn < 0 || newColumn >= 10)  // tohle je kdybych implementoval vlastní mapy a někdo by neudělal zdi tak at se nemužu dostat mimo mapu
                 return;
 
             Border newCell = gameMap[newRow, newColumn];
 
             if (newCell.Style == walls)
             {
+                movesound.Stop();
                 return;
             }
             else if (newCell.Style == box)
@@ -251,22 +264,28 @@ namespace Projektusamogus
                 int newBoxRow = newRow + (newRow - playerRow);
                 int newBoxColumn = newColumn + (newColumn - playerColumn);
 
-                if (newBoxRow < 0 || newBoxRow >= 10 || newBoxColumn < 0 || newBoxColumn >= 10)
+                if (newBoxRow < 0 || newBoxRow >= 10 || newBoxColumn < 0 || newBoxColumn >= 10) // stejně jako předtim
+                {
+                    movesound.Stop();
                     return;
-
+                }
                 Border newBoxCell = gameMap[newBoxRow, newBoxColumn];
-                if (newBoxCell.Style == walls || newBoxCell.Style == box)
-                    return;
 
+                if (newBoxCell.Style == walls || newBoxCell.Style == box)
+                {
+                    movesound.Stop();
+                    return;
+                }
+                    
                 Grid.SetRow(gameMap[newRow, newColumn], newBoxRow);
                 Grid.SetColumn(gameMap[newRow, newColumn], newBoxColumn);
-
                 gameMap[newBoxRow, newBoxColumn] = gameMap[newRow, newColumn]; //vezme kontent z toho boxu a da to na novy misto // bez tohohle by ten content se ztratil protože by zustal na miste a tam dam border a timpadem tam content není
                 gameMap[newRow, newColumn] = new Border
                 {
                     Background = Brushes.Transparent
                 };
-            }
+            }// box check
+            movesound.Play();
             Grid.SetRow(gameMap[playerRow, playerColumn], newRow);
             Grid.SetColumn(gameMap[playerRow, playerColumn], newColumn);
             gameMap[newRow, newColumn] = gameMap[playerRow, playerColumn]; // to stejny lol
@@ -274,9 +293,9 @@ namespace Projektusamogus
             {
                 Background = Brushes.Transparent
             };
+            
             playerRow = newRow;
             playerColumn = newColumn;
-            movesound.Play();
             CheckDestinations();
         }
         private void QuitLevel()
@@ -284,6 +303,7 @@ namespace Projektusamogus
             MessageBoxResult result = MessageBox.Show("Chceš opustit level?", "Potvrzení že jsi špatnej a neumíš to", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
+                gamesong.Stop();
                 MenuWindow menuwindow = new MenuWindow();
                 menuwindow.Show();
                 this.Close();

@@ -28,14 +28,13 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush ImageSource="/img/destination.png"/>
-                    <!--https://pngtree.com/freepng/check-red-cross-mark-grunge_7586752.html-->
                 </Setter.Value>
             </Setter>
         </Style>
         <Style TargetType="Border" x:Key="Player">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="/img/pyramid.jpg"/>
+                    <ImageBrush ImageSource="/img/playercharacter.jpg"/>
                 </Setter.Value>
             </Setter>
         </Style>

@@ -10,19 +10,25 @@
   <ItemGroup>
     <None Remove="img\Box.png" />
     <None Remove="img\Destination.png" />
-    <None Remove="img\pyramid.jpg" />
+    <None Remove="img\playercharacter.jpg" />
     <None Remove="img\wall.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="img\box.png" />
     <Resource Include="img\destination.png" />
-    <Resource Include="img\pyramid.jpg" />
+    <Resource Include="img\playercharacter.jpg" />
     <Resource Include="img\wall.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="sounds\gamesong.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="sounds\movesound.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="sounds\winsound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
