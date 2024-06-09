@@ -41,7 +41,7 @@ Atributy třídy MainWindow
       - Dvourozměrné pole reprezentující herní mřížku, kde každý prvek je instance třídy Border.
 
   - `private string[] levelmap`
-    - Pole které je vlastně mapa akorát v symbolech
+    - Pole kde reprezentuji mapu ve stringu.
 
   - `private int playerRow`
     - Pozice hráče na řádku v herní mřížce.
