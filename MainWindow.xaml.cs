@@ -141,7 +141,7 @@ namespace Projektusamogus
             {
                 for (int column = 0; column < level.Length; column++)
                 {
-                    char symbol = level[row][column]; // symbol bere symbol z level row column a co se tam nazachi switch nastaví
+                    char symbol = level[row][column];
                     switch (symbol)
                     {
                         case 'P':
@@ -250,7 +250,10 @@ namespace Projektusamogus
             Style box = FindResource("Box") as Style;
 
             if (newRow < 0 || newRow >= 10 || newColumn < 0 || newColumn >= 10)  // tohle je kdybych implementoval vlastní mapy a někdo by neudělal zdi tak at se nemužu dostat mimo mapu
+            {
+                movesound.Stop();
                 return;
+            }
 
             Border newCell = gameMap[newRow, newColumn];
 
@@ -259,7 +262,7 @@ namespace Projektusamogus
                 movesound.Stop();
                 return;
             }
-            else if (newCell.Style == box)
+            else if (newCell.Style == box) //box check
             {
                 int newBoxRow = newRow + (newRow - playerRow);
                 int newBoxColumn = newColumn + (newColumn - playerColumn);
@@ -284,7 +287,8 @@ namespace Projektusamogus
                 {
                     Background = Brushes.Transparent
                 };
-            }// box check
+            }
+
             movesound.Play();
             Grid.SetRow(gameMap[playerRow, playerColumn], newRow);
             Grid.SetColumn(gameMap[playerRow, playerColumn], newColumn);
