@@ -7,25 +7,30 @@ Hra je strukturována ve třídě `MainWindow`. Hra spočívá v logickém řeš
 ## Atribuce grafiky
 Následující grafické prvky byly použity v projektu:
 
-Grafika zdi:
+### Grafika zdi:
 
-Zdroj: [Painted Stone Wall Texture](https://guardian5.itch.io/painted-stone-wall-texture?download)
-Autor: Guardian5
-Licencováno pod: Podmínky použití uvedené na stránce zdroje
+  - Zdroj: [Painted Stone Wall Texture](https://guardian5.itch.io/painted-stone-wall-texture?download)
+  - Autor: Guardian5
 
-Grafika boxu:
+### Grafika boxu:
 
-Zdroj: [2D Wooden Box](https://opengameart.org/content/2d-wooden-box)
-Autor: Gaurav Kumar (gdaksh)
-Licencováno pod: Creative Commons CC0 (veřejná doména)
+  - Zdroj: [2D Wooden Box](https://opengameart.org/content/2d-wooden-box)
+  - Autor: Gaurav Kumar (gdaksh)
 
-Grafika destinace:
+### Grafika destinace:
 
-Zdroj: [Check red cross mark grunge](https://pngtree.com/freepng/check-red-cross-mark-grunge_7586752.html)
-Autor: PNGTree
-Licencováno pod: Free for personal use (je třeba ověřit podmínky použití na stránce zdroje)
+  - Zdroj: [Check red cross mark grunge](https://pngtree.com/freepng/check-red-cross-mark-grunge_7586752.html)
+  - Autor: PNGTree
+
 
 ## Třídy a Metody
+
+### Třída `StartWindow`
+Startovní okno aplikace, které slouží k uvítání uživatele. Obsahuje tlačítko, které uživatele přesměruje na menu okno.
+.
+### Třída `MenuWindow`
+
+Menu okno, ve kterém si uživatel vybírá level. Po výběru úrovně dojde k přesměrování na hlavní okno aplikace `MainWindow`.
 
 ### Třída `MainWindow`
 
@@ -36,7 +41,7 @@ Atributy třídy MainWindow
       - Dvourozměrné pole reprezentující herní mřížku, kde každý prvek je instance třídy Border.
 
   - `private string[] levelmap`
-    - Pole řetězců, které reprezentuje mapu levelu.
+    - Pole které je vlastně mapa akorát v symbolech
 
   - `private int playerRow`
     - Pozice hráče na řádku v herní mřížce.
@@ -337,10 +342,3 @@ private void MovePlayer(int newRow, int newColumn)
 }
    
 ```
-
-### Třída `StartWindow`
-
-.
-### Třída `MenuWindow`
-
-Menu okno kde si vybírám level.
