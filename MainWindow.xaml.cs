@@ -237,6 +237,7 @@ namespace Projektusamogus
             MessageBoxResult result = MessageBox.Show("Vyhrál jsi!", "Gratuluji ti", MessageBoxButton.OK);
             if (result == MessageBoxResult.OK)
             {
+                gamesong.Stop();
                 StartWindow startWindow = new StartWindow();
                 startWindow.Show();
                 this.Close();
