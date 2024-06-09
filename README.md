@@ -4,6 +4,27 @@
 
 Hra je strukturována ve třídě `MainWindow`. Hra spočívá v logickém řešení hádanek posouváním boxů na určené destinace.
 
+## Atribuce grafiky
+Následující grafické prvky byly použity v projektu:
+
+Grafika zdi:
+
+Zdroj: [Painted Stone Wall Texture](https://guardian5.itch.io/painted-stone-wall-texture?download)
+Autor: Guardian5
+Licencováno pod: Podmínky použití uvedené na stránce zdroje
+
+Grafika boxu:
+
+Zdroj: [2D Wooden Box](https://opengameart.org/content/2d-wooden-box)
+Autor: Gaurav Kumar (gdaksh)
+Licencováno pod: Creative Commons CC0 (veřejná doména)
+
+Grafika destinace:
+
+Zdroj: [Check red cross mark grunge](https://pngtree.com/freepng/check-red-cross-mark-grunge_7586752.html)
+Autor: PNGTree
+Licencováno pod: Free for personal use (je třeba ověřit podmínky použití na stránce zdroje)
+
 ## Třídy a Metody
 
 ### Třída `MainWindow`
@@ -316,3 +337,10 @@ private void MovePlayer(int newRow, int newColumn)
 }
    
 ```
+
+### Třída `StartWindow`
+
+.
+### Třída `MenuWindow`
+
+Menu okno kde si vybírám level.
