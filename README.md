@@ -29,7 +29,7 @@ Následující muzika byla použita v projektu:
 
 ### Třída `StartWindow`
 Startovní okno aplikace, které slouží k uvítání uživatele. Obsahuje tlačítko, které uživatele přesměruje na menu okno.
-.
+
 ### Třída `MenuWindow`
 
 Menu okno, ve kterém si uživatel vybírá level. Po výběru úrovně dojde k přesměrování na hlavní okno aplikace `MainWindow`.
