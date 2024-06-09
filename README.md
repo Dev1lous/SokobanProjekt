@@ -220,7 +220,7 @@ private void DrawWalls(int row, int column)
 ```
 - **Metoda DrawPlayer()**
     - Vykresluje hráče v `gameMap` podle symbolu `P` v atributu `levelmap`
-    - Styl `Player` je definován v XAML souboru a obsahuje informace o vzhledu hráče.
+    - Styl `Player` je definován v XAML souboru.
 ```cs
 private void DrawPlayer()
 {
@@ -238,7 +238,7 @@ private void DrawPlayer()
 ```
 - **Metoda DrawBox(int row, int column)**
     - Vykresluje box v `gameMap` podle symbolu `B` v atributu `levelmap`
-    - Styl `box` je definován v XAML souboru a obsahuje informace o vzhledu hráče.
+    - Styl `box` je definován v XAML souboru.
 ```cs
 private void DrawBox(int row, int column)
 {
@@ -256,7 +256,7 @@ private void DrawBox(int row, int column)
 ```
 - **Metoda DrawDestination(int row, int column)**
     - Vykresluje destinaci v `gameMap` podle symbolu `$` v atributu `levelmap`
-    - Styl `Destination` je definován v XAML souboru kde.
+    - Styl `Destination` je definován v XAML souboru.
 ```cs
 private void DrawDestination(int row, int column)
 {
@@ -272,7 +272,7 @@ private void DrawDestination(int row, int column)
 }
 ```
 - **Metoda CheckDestinations()**
-    - Kontroluje, zda jsou všechny boxy na destinacích, přehraje zvuk vítězství a zobrazí zprávu, pokud hráč vyhrál.
+    - Kontroluje, zda jsou všechny boxy na destinacích, pokuď ano tak zobrazí zprávu že hráč vyhrál.
 ```cs
 private void CheckDestinations()
 {
